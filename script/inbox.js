@@ -96,9 +96,9 @@ function Inbox(config) {
             var message = msg.cleanContent;
             if(author.id === bot.user.id) return; // Don't listen to yourself, bot
             if(!channel.guild) return respond(channel); // Private message
-            if(channel.guild.members.get(author.id).roles.length === 0) return;
             var serverID = channel.guild.id;
             let server = self.servers.get(serverID);
+            if(channel.guild.members.get(author.id).roles.length === 0) return;
             if(!server) return;
             if(config.get('infoCommand') && config.get('url') && message === config.get('infoCommand')) return respond(channel);
             if(server.ignoreUsers && // Check if this user is ignored
@@ -116,7 +116,7 @@ function Inbox(config) {
             });
         });
         bot.on('presenceUpdate', ({ id, status, guild }) => {
-            if(!self.servers.has(guild.id)) return;
+            if(!self.servers.has(guild.id)) return
             if(guild.members.get(id).roles.length === 0) return;
             self.emit('presence', {
                 type: 'presence', server: guild.id, data: { uid: id, status }
