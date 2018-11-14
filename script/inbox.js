@@ -96,11 +96,13 @@ function Inbox(config) {
             var message = msg.cleanContent;
             if(author.id === bot.user.id) return; // Don't listen to yourself, bot
             if(!channel.guild) return respond(channel); // Private message
+            if(channel.guild.members.get(author.id).roles.length === 0) return;
             var serverID = channel.guild.id;
             let server = self.servers.get(serverID);
             if(!server) return;
             if(config.get('infoCommand') && config.get('url') && message === config.get('infoCommand')) return respond(channel);
             if(server.ignoreUsers && // Check if this user is ignored
+            if(member.roles.length === 0) continue;
                 server.ignoreUsers.indexOf(author.id)) return;
             if(server.ignoreChannels && // Check if this channel is ignored
                 (server.ignoreChannels.indexOf(channel.name) >= 0 ||
@@ -115,6 +117,7 @@ function Inbox(config) {
         });
         bot.on('presenceUpdate', ({ id, status, guild }) => {
             if(!self.servers.has(guild.id)) return;
+            if(guild.members.get(id).roles.length === 0) return;
             self.emit('presence', {
                 type: 'presence', server: guild.id, data: { uid: id, status }
             });
@@ -133,7 +136,8 @@ Inbox.prototype.getUsers = function(connectRequest) {
     let guild = this.bot.guilds.get(server.discordID);
     if(!guild) return 'unknown-server';
     let users = {};
-    for(let [uid, member] of guild.members) {
+    for(let [uid, member] of guild.members) 
+    if(member.roles.length === 0) continue; {
         users[uid] = {
             id: uid,
             username: member.nick || member.username,
