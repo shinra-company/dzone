@@ -41,7 +41,7 @@ function initWebsocket() {
     var Decorator = require('./script/props/decorator.js');
     var users, world, decorator;
 
-    var socketURL = (window.location.protocol == 'https:' ? 'wss://d-dzone.herokuapp.com' : 'ws://d-dzone.herokuapp.com') + window.location.hostname + (socketConfig.port ? ':' + socketConfig.port : '')
+    var socketURL = (window.location.protocol == 'https:' ? 'wss://' : 'ws://') + "d-dzone.herokuapp"
     console.log(socketURL);
 
     // Swap the comments on the next 3 lines to switch between your websocket server and a virtual one
