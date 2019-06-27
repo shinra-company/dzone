@@ -1,6 +1,6 @@
 {
-  "url": "https://hojos-laboratory.shin-ra.co",
-  "infoCommand": "!d-zone",
+  "url": "http://hojos-laboratory.shin-ra.co",
+  "infoCommand": "!hojo",
   "autoPopulate": true,
   "servers": [
     503730378465476608,
