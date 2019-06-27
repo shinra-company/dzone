@@ -1,5 +1,5 @@
 {
-  "url": "https://hojos-laboratory.heroku.com",
+  "url": "https://hojos-laboratory.herokuapp.com",
   "infoCommand": "!d-zone",
   "autoPopulate": true,
   "servers": [
