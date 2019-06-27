@@ -1,7 +1,9 @@
 {
-  "url": "https://dzone.meetdelta.com/",
-  "infoCommand": ".pixel",
+  "url": "https://hojos-laboratory.heroku.com",
+  "infoCommand": "!d-zone",
   "autoPopulate": true,
   "servers": [
+    503730378465476608,
+    524602866032312340
   ]
 }
