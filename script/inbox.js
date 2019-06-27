@@ -72,6 +72,7 @@ function Inbox(config) {
 
         console.log('Connected to', self.servers.size, 'server(s)');
         self.emit('connected');
+        setPresence();
 
         bot.on('guildCreate', (guild) => {
             var newServer = {};
