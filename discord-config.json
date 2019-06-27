@@ -2,8 +2,5 @@
   "url": "http://hojos-laboratory.shin-ra.co",
   "infoCommand": "!hojo",
   "autoPopulate": true,
-  "servers": [
-    503730378465476608,
-    524602866032312340
-  ]
+  "servers": []
 }
