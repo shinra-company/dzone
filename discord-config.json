@@ -2,5 +2,10 @@
   "url": "http://hojos-laboratory.shin-ra.co",
   "infoCommand": "!hojo",
   "autoPopulate": true,
-  "servers": []
+  "servers": [
+    {
+      "id": "503730378465476608",
+      "default": true
+    }
+  ]
 }
