@@ -16,7 +16,7 @@ function Inbox(config) {
     var self = this;
     function setPresence() {
         bot.editStatus(null, {
-            name: config.get('infoCommand'),
+            name: `God with Life. ${config.get('infoCommand')}`,
             url: config.get('url'),
             type: 0
         });
