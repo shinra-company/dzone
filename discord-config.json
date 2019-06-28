@@ -1,11 +1,16 @@
 {
   "url": "http://hojos-laboratory.shin-ra.co",
   "infoCommand": "!hojo",
-  "autoPopulate": true,
+  "autoPopulate": false,
   "servers": [
     {
       "id": "503730378465476608",
       "default": true
+    },
+    {
+      "id": "524602866032312340",
+      "default": false,
+      "password": "aerithlives"
     }
   ]
 }
